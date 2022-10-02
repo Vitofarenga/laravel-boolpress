@@ -2,6 +2,9 @@
   <main class="container">
     <div class="row">
         <div class="col-12">
+          <div v-if="isLoading" class="loader">
+            <MainLoader />
+          </div>
             <h1 class="p-3 m-3">
                  ciao
             </h1>
@@ -15,10 +18,12 @@
 
 <script>
 import PostCard from './PostCard.vue'
+import MainLoader from './MainLoader.vue'
 import axios from 'axios';
 export default {
       components:{
-        PostCard
+        PostCard,
+        MainLoader
       },
       data:function(){
           return{
